@@ -1,0 +1,7 @@
+header {
+    min-height: 60px;
+    background-color: #bbd2f5;
+}
+.header_wrap {
+    display: flex;
+}
