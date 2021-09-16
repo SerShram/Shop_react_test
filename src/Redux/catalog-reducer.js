@@ -1,4 +1,5 @@
-const SET_ALL_PRODUCTS = 'SET_ALL_PRODUCTS';
+const SET_PRODUCTS = 'SET_PRODUCTS';
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 const REMOVE_ALL_PRODUCTS = 'REMOVE_ALL_PRODUCTS';
 const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
@@ -9,7 +10,7 @@ let initialState = {
 export const catalogPageReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case SET_ALL_PRODUCTS:
+        case SET_PRODUCTS:
             //return {...state, products: [...state.products, ...action.products]} // Добавляем Products к уже существующим
             return {...state, products: action.products}
 
@@ -25,7 +26,8 @@ export const catalogPageReducer = (state = initialState, action) => {
 }
 
 //----------------- Action creators ------------------------------
-export const setAllProductsAC = (products) => ({type: SET_ALL_PRODUCTS, products});
+export const setProductsAC = (products) => ({type: SET_PRODUCTS, products});
+export const fetchProductsAC = () => ({type: FETCH_PRODUCTS});
 export const removeAllProductsAC = () => ({type: REMOVE_ALL_PRODUCTS});
 export const deleteProductAC = (product) => ({type: DELETE_PRODUCT, product});
 

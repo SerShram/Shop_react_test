@@ -1,13 +1,18 @@
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import {catalogPageReducer} from "./catalog-reducer";
+import createSagaMiddleware from "redux-saga";
+import {rootWatcher} from "../Saga/saga";
 
+const sagaMiddleware = createSagaMiddleware();
 
-let reducers = combineReducers({
+const reducers = combineReducers({
     CatalogPage: catalogPageReducer,
 });
 
-let store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootWatcher)
 
 export default store;
-
-window.store = store; // Смотреть store в консоли
+// Смотреть store в консоли
+window.store = store;

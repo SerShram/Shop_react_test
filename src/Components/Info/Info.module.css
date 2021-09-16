@@ -1,0 +1,20 @@
+.info {
+    border: 1px solid #61dafb4a;
+    padding: 10px;
+}
+.infoItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.infoItem {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px;
+}
+.infoItemTitle {}
+.infoItemValue {
+    font-size: 1.3rem;
+    color: #e91e63;
+    font-weight: bold;
+}

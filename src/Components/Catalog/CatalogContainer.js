@@ -1,18 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Catalog from "./Catalog";
 import {useDispatch, useSelector} from "react-redux";
-import {deleteProductAC, removeAllProductsAC, setAllProductsAC} from "../../Redux/catalog-reducer";
+import {deleteProductAC, fetchProductsAC, removeAllProductsAC} from "../../Redux/catalog-reducer";
 
 const CatalogContainer = () => {
-
-    const [data, setData] = useState([]);
 
     const dispatch = useDispatch();
     const products = useSelector(state => state.CatalogPage.products);
 
     // Загрузить весь каталог
-    const setAllProducts = () => {
-        dispatch(setAllProductsAC(data))
+    const setProducts = () => {
+        dispatch(fetchProductsAC())
     }
 
     // Удалить весь каталог
@@ -25,21 +23,12 @@ const CatalogContainer = () => {
         dispatch(deleteProductAC(product.id))
     }
 
-    // Получаем данные из https://fakestoreapi.com
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(
-                (result) => setData(result)
-            )
-    }, []);
-
     return (
         <div>
             <Catalog
                 products={products}
                 removeAllProducts={removeAllProducts}
-                setAllProducts={setAllProducts}
+                setProducts={setProducts}
                 deleteProduct={deleteProduct}
             />
         </div>
