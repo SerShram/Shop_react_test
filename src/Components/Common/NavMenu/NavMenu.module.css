@@ -1,0 +1,14 @@
+.navMenu {
+    display: flex;
+}
+.navMenu li {
+    margin-right: 30px;
+}
+.navMenu a {
+    color: #61DAFB;
+    font-size: 20px;
+    font-weight: bold;
+}
+a.selected {
+    color: #e91e63;
+}

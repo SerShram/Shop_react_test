@@ -1,4 +1,12 @@
-footer {
-    min-height: 80px;
-    background-color: #a4f5a4;
+.footer_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer_name {
+    color: #61DAFB;
+    margin-right: 20px;
+}
+.footer_phone {
+    color: #e91e63;
 }

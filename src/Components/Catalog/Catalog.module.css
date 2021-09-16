@@ -1,0 +1,14 @@
+.catalogTitle {
+    text-align: center;
+    margin: 20px;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px 20px;
+}
+.blockBtnCreate {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
