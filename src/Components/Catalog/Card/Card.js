@@ -1,6 +1,7 @@
 import React from 'react';
 import s from "./Card.module.css";
-import MyButton from "../../../Assets/MyButton/MyButton";
+import MyButton from "../../../Assets/MyButton";
+import Logo from "../../Common/Logo/Logo";
 
 const Card = ({product, deleteProduct}) => {
     const p = product;
@@ -8,7 +9,11 @@ const Card = ({product, deleteProduct}) => {
         <div className={s.card}>
             <div className={s.cardBody}>
                 <div className={s.cardImage}>
-                    <img src={p.image} alt={p.image}/>
+                    {(p.image)
+                        ? <img src={p.image} alt={p.image}/>
+                        : <Logo/>
+                    }
+
                 </div>
                 <div className="cardContent">
                     <h4 className={s.cardTitle}>{p.title}</h4>

@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Catalog.module.css"
-import MyButton from "../../Assets/MyButton/MyButton";
+import MyButton from "../../Assets/MyButton";
 import Card from "./Card/Card";
 import Info from "../Info/Info";
 
@@ -8,13 +8,13 @@ const Catalog = ({products, removeAllProducts, setProducts, deleteProduct}) => {
 
     return (
         <div>
-            <h1 className={s.catalogTitle}>
+            <h1>
                 {(!products.length)
                     ? 'The catalog is empty!'
                     : 'Catalog of Products'}
             </h1>
 
-            <Info products={products}/>
+            <Info/>
 
             <div className={s.blockBtnCreate}>
                 {(!products.length)

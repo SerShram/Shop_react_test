@@ -1,7 +1,10 @@
 import React from 'react';
 import s from './Info.module.css'
+import {useSelector} from "react-redux";
 
-const Info = ({products}) => {
+const Info = () => {
+
+    const products = useSelector(state => state.CatalogPage.products);
 
     let goods = 0;
     let total = 0;
