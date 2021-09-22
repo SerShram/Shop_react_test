@@ -4,7 +4,7 @@ import MyButton from "../../Assets/MyButton";
 import Card from "./Card/Card";
 import Info from "../Info/Info";
 
-const Catalog = ({products, removeAllProducts, setProducts, deleteProduct}) => {
+const Catalog = ({products, removeAllProducts, setProducts, deleteProduct, isAdmin}) => {
 
     return (
         <div>
@@ -19,7 +19,8 @@ const Catalog = ({products, removeAllProducts, setProducts, deleteProduct}) => {
             <div className={s.blockBtnCreate}>
                 {(!products.length)
                     ? <MyButton text="Download Catalog" func={setProducts}/>
-                    : <MyButton text="Remove Catalog" func={removeAllProducts} />
+                    : isAdmin &&
+                    <MyButton text="Remove Catalog" func={removeAllProducts} />
                 }
             </div>
 
@@ -27,7 +28,9 @@ const Catalog = ({products, removeAllProducts, setProducts, deleteProduct}) => {
                 {products.map(product => <Card
                     product={product}
                     deleteProduct={deleteProduct}
-                    key={product.id}/>)}
+                    key={product.id}
+                    isAdmin={isAdmin}/>)
+                }
             </div>
         </div>
     )

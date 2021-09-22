@@ -3,7 +3,7 @@ import s from "./Card.module.css";
 import MyButton from "../../../Assets/MyButton";
 import Logo from "../../Common/Logo/Logo";
 
-const Card = ({product, deleteProduct}) => {
+const Card = ({product, deleteProduct, isAdmin}) => {
     const p = product;
 
     return (
@@ -17,12 +17,16 @@ const Card = ({product, deleteProduct}) => {
                     <div className={s.cardDesc}>{p.description}</div>
                     <div className={s.cardPrice}>{p.price + ' $'}</div>
                 </div>
+
+                {isAdmin &&
                 <div className={s.cardBtn}>
                     <MyButton
                         text="Delete Product"
                         func={() => deleteProduct(p)}
                     />
                 </div>
+                }
+
             </div>
         </div>
     );

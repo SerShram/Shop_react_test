@@ -7,6 +7,8 @@ const CatalogContainer = () => {
 
     const dispatch = useDispatch();
     const products = useSelector(state => state.CatalogPage.products);
+    const isAdmin = useSelector(state => state.CatalogPage.user.admin);
+
 
     // Загрузить весь каталог
     const setProducts = () => {
@@ -30,6 +32,7 @@ const CatalogContainer = () => {
                 removeAllProducts={removeAllProducts}
                 setProducts={setProducts}
                 deleteProduct={deleteProduct}
+                isAdmin={isAdmin}
             />
         </div>
 
