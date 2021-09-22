@@ -3,9 +3,11 @@ export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 const REMOVE_ALL_PRODUCTS = 'REMOVE_ALL_PRODUCTS';
 const DELETE_PRODUCT = 'DELETE_PRODUCT';
 const ADD_PRODUCT = 'ADD_PRODUCT';
+const SET_USER_ROLE = 'SET_USER_ROLE';
 
 let initialState = {
     products: [],
+    user: {name: 'Roles', admin: false}
 };
 
 export const catalogPageReducer = (state = initialState, action) => {
@@ -25,6 +27,9 @@ export const catalogPageReducer = (state = initialState, action) => {
         case DELETE_PRODUCT:
             return {...state, products: state.products.filter(product => product.id !== action.product)}
 
+        case SET_USER_ROLE:
+            return {...state, user: {...state.user, ...action.user}}
+
         default:
             return state;
     }
@@ -36,5 +41,6 @@ export const fetchProductsAC = () => ({type: FETCH_PRODUCTS});
 export const removeAllProductsAC = () => ({type: REMOVE_ALL_PRODUCTS});
 export const deleteProductAC = (product) => ({type: DELETE_PRODUCT, product});
 export const addProductAC = (product) => ({type: ADD_PRODUCT, product});
+export const setUserRoleAC = (user) => ({type: SET_USER_ROLE, user})
 
 

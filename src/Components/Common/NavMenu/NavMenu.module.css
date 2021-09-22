@@ -1,5 +1,7 @@
 .navMenu {
+    flex-grow: 1;
     display: flex;
+    padding-left: 10%;
 }
 .navMenu li {
     margin-right: 30px;

@@ -3,7 +3,7 @@ import s from "./Header.module.css";
 import "./Header.module.css"
 import NavMenu from "../NavMenu/NavMenu";
 import Logo from "../Logo/Logo";
-import Roles from "../../Roles/Roles";
+import Roles from "../Roles/Roles";
 import {NavLink} from "react-router-dom";
 
 const Header = () => {

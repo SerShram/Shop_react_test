@@ -5,15 +5,12 @@ import Logo from "../../Common/Logo/Logo";
 
 const Card = ({product, deleteProduct}) => {
     const p = product;
+
     return (
         <div className={s.card}>
             <div className={s.cardBody}>
                 <div className={s.cardImage}>
-                    {(p.image)
-                        ? <img src={p.image} alt={p.image}/>
-                        : <Logo/>
-                    }
-
+                    {(p.image) ? <img src={p.image} alt={p.image}/> : <Logo/>}
                 </div>
                 <div className="cardContent">
                     <h4 className={s.cardTitle}>{p.title}</h4>
