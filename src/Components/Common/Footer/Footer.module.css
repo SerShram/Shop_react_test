@@ -10,3 +10,8 @@
 .footer_phone {
     color: #e91e63;
 }
+@media (max-width: 500px) {
+    .footer_wrap {
+        flex-direction: column;
+    }
+}

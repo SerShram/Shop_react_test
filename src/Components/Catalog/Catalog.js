@@ -4,6 +4,7 @@ import MyButton from "../../Assets/MyButton";
 import Card from "./Card/Card";
 import Info from "../Info/Info";
 import Pagination from "../Pagination/Pagination";
+import Preloader from "../../Assets/Preloader";
 
 const Catalog = ({isLoading, currentProducts, removeAllProducts, setProducts, deleteProduct, isAdmin, setCurrentPage, totalCountProducts, currentPage}) => {
 
@@ -20,12 +21,14 @@ const Catalog = ({isLoading, currentProducts, removeAllProducts, setProducts, de
             <div className={s.blockBtnCreate}>
                 {(!products.length)
                     ? <MyButton text="Download Catalog" func={setProducts}/>
-                    : isAdmin &&
-                    <MyButton text="Remove Catalog" func={removeAllProducts} />
+                    : isAdmin && <MyButton text="Remove Catalog" func={removeAllProducts} />
                 }
             </div>
 
             <div className={s.cards}>
+
+                {isLoading && <Preloader/>}
+
                 {products.map(product => <Card
                     product={product}
                     deleteProduct={deleteProduct}

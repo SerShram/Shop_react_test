@@ -16,3 +16,13 @@ a.selected .name {
 .role {
     font-size: 12px;
 }
+@media (max-width: 776px) {
+    .name {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .role {
+        font-size: 10px;
+        font-weight: normal;
+    }
+}

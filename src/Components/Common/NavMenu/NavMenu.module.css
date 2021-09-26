@@ -1,6 +1,7 @@
 .navMenu {
     flex-grow: 1;
     display: flex;
+    align-items: center;
     padding-left: 10%;
 }
 .navMenu li {
@@ -13,4 +14,17 @@
 }
 a.selected {
     color: #e91e63;
+}
+@media (max-width: 776px) {
+    .navMenu li {
+        margin-right: 20px;
+    }
+    .navMenu a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 500px) {
+    .navMenu a {
+        font-size: 12px;
+    }
 }

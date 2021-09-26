@@ -1,9 +1,7 @@
 import React from 'react';
 import Catalog from "./Catalog";
 import {useDispatch, useSelector} from "react-redux";
-import {
-    deleteProductAC, fetchProductsAC, removeAllProductsAC, setCurrentPageAC, toggleIsFetchingAC,
-} from "../../Redux/catalog-reducer";
+import {deleteProductAC, fetchProductsAC, removeAllProductsAC, setCurrentPageAC} from "../../Redux/catalog-reducer";
 
 const CatalogContainer = () => {
 
@@ -22,9 +20,7 @@ const CatalogContainer = () => {
 
     // Загрузить весь каталог
     const setProducts = () => {
-        dispatch(toggleIsFetchingAC(true))
-        dispatch(fetchProductsAC())
-        dispatch(toggleIsFetchingAC(false))
+        dispatch(fetchProductsAC());
     }
     // Удалить весь каталог
     const removeAllProducts = () => {

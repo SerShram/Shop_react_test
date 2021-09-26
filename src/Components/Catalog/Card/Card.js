@@ -10,7 +10,7 @@ const Card = ({product, deleteProduct, isAdmin}) => {
         <div className={s.card}>
             <div className={s.cardBody}>
                 <div className={s.cardImage}>
-                    {(p.image) ? <img src={p.image} alt={p.image}/> : <Logo/>}
+                    {(p.image) ? <img src={p.image} alt=""/> : <Logo/>}
                 </div>
                 <div className="cardContent">
                     <h4 className={s.cardTitle}>{p.title}</h4>
