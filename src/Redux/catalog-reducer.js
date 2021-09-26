@@ -4,10 +4,14 @@ const REMOVE_ALL_PRODUCTS = 'REMOVE_ALL_PRODUCTS';
 const DELETE_PRODUCT = 'DELETE_PRODUCT';
 const ADD_PRODUCT = 'ADD_PRODUCT';
 const SET_USER_ROLE = 'SET_USER_ROLE';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const TOGGLE_IS_LOADING = 'TOGGLE_IS_LOADING';
 
 let initialState = {
     products: [],
-    user: {name: 'Roles', admin: false}
+    user: {name: 'Roles', admin: false},
+    currentPage: 1,
+    isLoading: false,
 };
 
 export const catalogPageReducer = (state = initialState, action) => {
@@ -30,6 +34,12 @@ export const catalogPageReducer = (state = initialState, action) => {
         case SET_USER_ROLE:
             return {...state, user: {...state.user, ...action.user}}
 
+        case SET_CURRENT_PAGE:
+            return {...state, currentPage: action.currentPage}
+
+        case TOGGLE_IS_LOADING:
+            return {...state, isLoading: action.loading}
+
         default:
             return state;
     }
@@ -42,5 +52,7 @@ export const removeAllProductsAC = () => ({type: REMOVE_ALL_PRODUCTS});
 export const deleteProductAC = (product) => ({type: DELETE_PRODUCT, product});
 export const addProductAC = (product) => ({type: ADD_PRODUCT, product});
 export const setUserRoleAC = (user) => ({type: SET_USER_ROLE, user})
+export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
+export const toggleIsFetchingAC = (loading) => ({type: TOGGLE_IS_LOADING, loading})
 
 

@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
 import AddProduct from "./AddProduct";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {addProductAC} from "../../Redux/catalog-reducer";
 
 const AddProductContainer = () => {
 
     const dispatch = useDispatch();
-    const products = useSelector(state => state.CatalogPage.products);
-
-
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');

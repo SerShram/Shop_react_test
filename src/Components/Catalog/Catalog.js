@@ -3,16 +3,17 @@ import s from "./Catalog.module.css"
 import MyButton from "../../Assets/MyButton";
 import Card from "./Card/Card";
 import Info from "../Info/Info";
+import Pagination from "../Pagination/Pagination";
 
-const Catalog = ({products, removeAllProducts, setProducts, deleteProduct, isAdmin}) => {
+const Catalog = ({isLoading, currentProducts, removeAllProducts, setProducts, deleteProduct, isAdmin, setCurrentPage, totalCountProducts, currentPage}) => {
+
+    const products = currentProducts;
 
     return (
         <div>
-            <h1>
-                {(!products.length)
-                    ? 'The catalog is empty!'
-                    : 'Catalog of Products'}
-            </h1>
+            {(!products.length)
+                ? <h1>The catalog is empty!</h1>
+                : <h1>Catalog of Products</h1>}
 
             <Info/>
 
@@ -32,6 +33,12 @@ const Catalog = ({products, removeAllProducts, setProducts, deleteProduct, isAdm
                     isAdmin={isAdmin}/>)
                 }
             </div>
+            <Pagination
+                setCurrentPage={setCurrentPage}
+                totalCountProducts={totalCountProducts}
+                currentPage={currentPage}
+            />
+
         </div>
     )
 }
