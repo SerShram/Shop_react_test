@@ -4,9 +4,9 @@ import {FETCH_PRODUCTS, setProductsAC, toggleIsFetchingAC} from "../Redux/catalo
 const fetchProductsFromApi = () => fetch('https://fakestoreapi.com/products');
 
 function* fetchProductWorker() {
+    yield put(toggleIsFetchingAC(true));
     const data = yield call(fetchProductsFromApi);
     const json = yield call(() => new Promise(res => res(data.json())));
-    yield put(toggleIsFetchingAC(true));
     yield put(setProductsAC(json));
     yield put(toggleIsFetchingAC(false));
 }
